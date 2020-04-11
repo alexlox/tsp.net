@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyPhotosModelStoreContainer" CdmEntityContainer="MyPhotosModelContainer">
+    <EntitySetMapping Name="Media">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.Media)">
+        <MappingFragment StoreEntitySet="Media">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="AbsPath" ColumnName="AbsPath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Characteristics">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.Characteristic)">
+        <MappingFragment StoreEntitySet="Characteristics">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CharValues">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.CharValue)">
+        <MappingFragment StoreEntitySet="CharValues">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="CharacteristicId" ColumnName="CharacteristicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MediaCharacteristic" TypeName="MyPhotosModel.MediaCharacteristic" StoreEntitySet="MediaCharacteristic">
+      <EndProperty Name="Media">
+        <ScalarProperty Name="Id" ColumnName="Media_Id" />
+      </EndProperty>
+      <EndProperty Name="Characteristic">
+        <ScalarProperty Name="Id" ColumnName="Characteristics_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MediaCharValue" TypeName="MyPhotosModel.MediaCharValue" StoreEntitySet="CharValues">
+      <EndProperty Name="Media">
+        <ScalarProperty Name="Id" ColumnName="Media_Id" />
+      </EndProperty>
+      <EndProperty Name="CharValue">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,9 @@
+D:\Faculty\TSP.NET\Lab2\Lab2\obj\Debug\Lab2.csprojAssemblyReference.cache
+D:\Faculty\TSP.NET\Lab2\Lab2\obj\Debug\Lab2.Calculator.resources
+D:\Faculty\TSP.NET\Lab2\Lab2\obj\Debug\Lab2.Properties.Resources.resources
+D:\Faculty\TSP.NET\Lab2\Lab2\obj\Debug\Lab2.csproj.GenerateResource.cache
+D:\Faculty\TSP.NET\Lab2\Lab2\bin\Debug\Lab2.exe.config
+D:\Faculty\TSP.NET\Lab2\Lab2\bin\Debug\Lab2.exe
+D:\Faculty\TSP.NET\Lab2\Lab2\bin\Debug\Lab2.pdb
+D:\Faculty\TSP.NET\Lab2\Lab2\obj\Debug\Lab2.exe
+D:\Faculty\TSP.NET\Lab2\Lab2\obj\Debug\Lab2.pdb

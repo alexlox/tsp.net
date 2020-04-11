@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MyPhotosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="MyPhotosModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Media" EntityType="MyPhotosModel.Media" />
+    <EntitySet Name="Characteristics" EntityType="MyPhotosModel.Characteristic" />
+    <EntitySet Name="CharValues" EntityType="MyPhotosModel.CharValue" />
+    <AssociationSet Name="MediaCharacteristic" Association="MyPhotosModel.MediaCharacteristic">
+      <End Role="Media" EntitySet="Media" />
+      <End Role="Characteristic" EntitySet="Characteristics" />
+    </AssociationSet>
+    <AssociationSet Name="MediaCharValue" Association="MyPhotosModel.MediaCharValue">
+      <End Role="Media" EntitySet="Media" />
+      <End Role="CharValue" EntitySet="CharValues" />
+    </AssociationSet>
+    <AssociationSet Name="CharacteristicCharValue" Association="MyPhotosModel.CharacteristicCharValue">
+      <End Role="Characteristic" EntitySet="Characteristics" />
+      <End Role="CharValue" EntitySet="CharValues" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="10" />
+    <Property Name="AbsPath" Type="String" Nullable="false" MaxLength="1024" />
+    <NavigationProperty Name="Characteristics" Relationship="MyPhotosModel.MediaCharacteristic" FromRole="Media" ToRole="Characteristic" />
+    <Property Name="Deleted" Type="String" Nullable="false" DefaultValue="False" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="CharValue" Relationship="MyPhotosModel.MediaCharValue" FromRole="Media" ToRole="CharValue" />
+  </EntityType>
+  <EntityType Name="Characteristic">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" />
+    <NavigationProperty Name="Media" Relationship="MyPhotosModel.MediaCharacteristic" FromRole="Characteristic" ToRole="Media" />
+    <NavigationProperty Name="CharValues" Relationship="MyPhotosModel.CharacteristicCharValue" FromRole="Characteristic" ToRole="CharValue" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CharValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" />
+    <NavigationProperty Name="Media" Relationship="MyPhotosModel.MediaCharValue" FromRole="CharValue" ToRole="Media" />
+    <NavigationProperty Name="Characteristic" Relationship="MyPhotosModel.CharacteristicCharValue" FromRole="CharValue" ToRole="Characteristic" />
+    <Property Name="CharacteristicId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="MediaCharacteristic">
+    <End Type="MyPhotosModel.Media" Role="Media" Multiplicity="*" />
+    <End Type="MyPhotosModel.Characteristic" Role="Characteristic" Multiplicity="*" />
+  </Association>
+  <Association Name="MediaCharValue">
+    <End Type="MyPhotosModel.Media" Role="Media" Multiplicity="1" />
+    <End Type="MyPhotosModel.CharValue" Role="CharValue" Multiplicity="0..1" />
+  </Association>
+  <Association Name="CharacteristicCharValue">
+    <End Type="MyPhotosModel.Characteristic" Role="Characteristic" Multiplicity="1" />
+    <End Type="MyPhotosModel.CharValue" Role="CharValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Characteristic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharValue">
+        <PropertyRef Name="CharacteristicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

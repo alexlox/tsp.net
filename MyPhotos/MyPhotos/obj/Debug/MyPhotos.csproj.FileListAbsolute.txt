@@ -1,0 +1,11 @@
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\MyPhotos.pdb
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\EntityFramework.dll
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\EntityFramework.SqlServer.dll
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\EntityFramework.xml
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\EntityFramework.SqlServer.xml
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csproj.CopyComplete
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.pdb
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csproj.CoreCompileInputs.cache
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\MyPhotos.dll.config
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\MyPhotos.dll
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.dll

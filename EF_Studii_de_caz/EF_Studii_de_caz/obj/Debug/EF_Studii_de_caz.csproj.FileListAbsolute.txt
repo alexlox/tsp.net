@@ -1,0 +1,14 @@
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EF_Studii_de_caz.exe.config
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EF_Studii_de_caz.exe
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EF_Studii_de_caz.pdb
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EntityFramework.dll
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EntityFramework.SqlServer.dll
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EntityFramework.xml
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\bin\Debug\EntityFramework.SqlServer.xml
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.csprojAssemblyReference.cache
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.Properties.Resources.resources
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.csproj.GenerateResource.cache
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.csproj.CopyComplete
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.exe
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.pdb
+D:\Faculty\TSP.NET\EF_Studii_de_caz\EF_Studii_de_caz\obj\Debug\EF_Studii_de_caz.Form1.resources

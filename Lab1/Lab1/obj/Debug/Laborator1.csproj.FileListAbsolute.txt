@@ -1,0 +1,7 @@
+D:\Faculty\TSP.NET\Lab1\Lab1\bin\Debug\Lab1.exe.config
+D:\Faculty\TSP.NET\Lab1\Lab1\bin\Debug\Lab1.exe
+D:\Faculty\TSP.NET\Lab1\Lab1\bin\Debug\Lab1.pdb
+D:\Faculty\TSP.NET\Lab1\Lab1\obj\Debug\Laborator1.csprojAssemblyReference.cache
+D:\Faculty\TSP.NET\Lab1\Lab1\obj\Debug\Laborator1.csproj.CoreCompileInputs.cache
+D:\Faculty\TSP.NET\Lab1\Lab1\obj\Debug\Lab1.exe
+D:\Faculty\TSP.NET\Lab1\Lab1\obj\Debug\Lab1.pdb

@@ -1,0 +1,11 @@
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\bin\Debug\ClientMyPhotos.exe.config
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\bin\Debug\ClientMyPhotos.exe
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\bin\Debug\ClientMyPhotos.pdb
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.csprojAssemblyReference.cache
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.AddPropertyDialogForm.resources
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.MyPhotosForm.resources
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.Properties.Resources.resources
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.csproj.GenerateResource.cache
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.csproj.CoreCompileInputs.cache
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.exe
+D:\Faculty\TSP.NET\MyPhotos\ClientMyPhotos\obj\Debug\ClientMyPhotos.pdb

@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyPhotosModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MyPhotosModelStoreContainer">
+    <EntitySet Name="Media" EntityType="MyPhotosModel.Store.Media" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Characteristics" EntityType="MyPhotosModel.Store.Characteristics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CharValues" EntityType="MyPhotosModel.Store.CharValues" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MediaCharacteristic" EntityType="MyPhotosModel.Store.MediaCharacteristic" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_MediaCharacteristic_Media" Association="MyPhotosModel.Store.FK_MediaCharacteristic_Media">
+      <End Role="Media" EntitySet="Media" />
+      <End Role="MediaCharacteristic" EntitySet="MediaCharacteristic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MediaCharacteristic_Characteristic" Association="MyPhotosModel.Store.FK_MediaCharacteristic_Characteristic">
+      <End Role="Characteristic" EntitySet="Characteristics" />
+      <End Role="MediaCharacteristic" EntitySet="MediaCharacteristic" />
+    </AssociationSet>
+    <AssociationSet Name="MediaCharValue" Association="MyPhotosModel.Store.MediaCharValue">
+      <End Role="Media" EntitySet="Media" />
+      <End Role="CharValue" EntitySet="CharValues" />
+    </AssociationSet>
+    <AssociationSet Name="CharacteristicCharValue" Association="MyPhotosModel.Store.CharacteristicCharValue">
+      <End Role="Characteristic" EntitySet="Characteristics" />
+      <End Role="CharValue" EntitySet="CharValues" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="AbsPath" Type="nvarchar" Nullable="false" MaxLength="1024" />
+    <Property Name="Deleted" Type="nvarchar(max)" Nullable="false" DefaultValue="False" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Characteristics">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CharValues">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CharacteristicId" Type="int" Nullable="false" />
+    <Property Name="Media_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaCharacteristic">
+    <Key>
+      <PropertyRef Name="Media_Id" />
+      <PropertyRef Name="Characteristics_Id" />
+    </Key>
+    <Property Name="Media_Id" Type="int" Nullable="false" />
+    <Property Name="Characteristics_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MediaCharValue">
+    <End Role="Media" Type="MyPhotosModel.Store.Media" Multiplicity="1" />
+    <End Role="CharValue" Type="MyPhotosModel.Store.CharValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Media">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharValue">
+        <PropertyRef Name="Media_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CharacteristicCharValue">
+    <End Role="Characteristic" Type="MyPhotosModel.Store.Characteristics" Multiplicity="1" />
+    <End Role="CharValue" Type="MyPhotosModel.Store.CharValues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Characteristic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CharValue">
+        <PropertyRef Name="CharacteristicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MediaCharacteristic_Media">
+    <End Role="Media" Type="MyPhotosModel.Store.Media" Multiplicity="1" />
+    <End Role="MediaCharacteristic" Type="MyPhotosModel.Store.MediaCharacteristic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Media">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaCharacteristic">
+        <PropertyRef Name="Media_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MediaCharacteristic_Characteristic">
+    <End Role="MediaCharacteristic" Type="MyPhotosModel.Store.MediaCharacteristic" Multiplicity="*" />
+    <End Role="Characteristic" Type="MyPhotosModel.Store.Characteristics" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Characteristic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaCharacteristic">
+        <PropertyRef Name="Characteristics_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MyPhotosModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MyPhotosModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Media" EntityType="MyPhotosModel.Media" />
+          <EntitySet Name="Characteristics" EntityType="MyPhotosModel.Characteristic" />
+          <EntitySet Name="CharValues" EntityType="MyPhotosModel.CharValue" />
+          <AssociationSet Name="MediaCharacteristic" Association="MyPhotosModel.MediaCharacteristic">
+            <End Role="Media" EntitySet="Media" />
+            <End Role="Characteristic" EntitySet="Characteristics" />
+          </AssociationSet>
+          <AssociationSet Name="MediaCharValue" Association="MyPhotosModel.MediaCharValue">
+            <End Role="Media" EntitySet="Media" />
+            <End Role="CharValue" EntitySet="CharValues" />
+          </AssociationSet>
+          <AssociationSet Name="CharacteristicCharValue" Association="MyPhotosModel.CharacteristicCharValue">
+            <End Role="Characteristic" EntitySet="Characteristics" />
+            <End Role="CharValue" EntitySet="CharValues" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Media">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="10" />
+          <Property Name="AbsPath" Type="String" Nullable="false" MaxLength="1024" />
+          <NavigationProperty Name="Characteristics" Relationship="MyPhotosModel.MediaCharacteristic" FromRole="Media" ToRole="Characteristic" />
+          <Property Name="Deleted" Type="String" Nullable="false" DefaultValue="False" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CharValue" Relationship="MyPhotosModel.MediaCharValue" FromRole="Media" ToRole="CharValue" />
+        </EntityType>
+        <EntityType Name="Characteristic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" />
+          <NavigationProperty Name="Media" Relationship="MyPhotosModel.MediaCharacteristic" FromRole="Characteristic" ToRole="Media" />
+          <NavigationProperty Name="CharValues" Relationship="MyPhotosModel.CharacteristicCharValue" FromRole="Characteristic" ToRole="CharValue" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="CharValue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" Nullable="false" />
+          <NavigationProperty Name="Media" Relationship="MyPhotosModel.MediaCharValue" FromRole="CharValue" ToRole="Media" />
+          <NavigationProperty Name="Characteristic" Relationship="MyPhotosModel.CharacteristicCharValue" FromRole="CharValue" ToRole="Characteristic" />
+          <Property Name="CharacteristicId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="MediaCharacteristic">
+          <End Type="MyPhotosModel.Media" Role="Media" Multiplicity="*" />
+          <End Type="MyPhotosModel.Characteristic" Role="Characteristic" Multiplicity="*" />
+        </Association>
+        <Association Name="MediaCharValue">
+          <End Type="MyPhotosModel.Media" Role="Media" Multiplicity="1" />
+          <End Type="MyPhotosModel.CharValue" Role="CharValue" Multiplicity="0..1" />
+        </Association>
+        <Association Name="CharacteristicCharValue">
+          <End Type="MyPhotosModel.Characteristic" Role="Characteristic" Multiplicity="1" />
+          <End Type="MyPhotosModel.CharValue" Role="CharValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Characteristic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CharValue">
+              <PropertyRef Name="CharacteristicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyPhotosModelStoreContainer" CdmEntityContainer="MyPhotosModelContainer">
+    <EntitySetMapping Name="Media">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.Media)">
+        <MappingFragment StoreEntitySet="Media">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="AbsPath" ColumnName="AbsPath" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Characteristics">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.Characteristic)">
+        <MappingFragment StoreEntitySet="Characteristics">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CharValues">
+      <EntityTypeMapping TypeName="IsTypeOf(MyPhotosModel.CharValue)">
+        <MappingFragment StoreEntitySet="CharValues">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="CharacteristicId" ColumnName="CharacteristicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MediaCharacteristic" TypeName="MyPhotosModel.MediaCharacteristic" StoreEntitySet="MediaCharacteristic">
+      <EndProperty Name="Media">
+        <ScalarProperty Name="Id" ColumnName="Media_Id" />
+      </EndProperty>
+      <EndProperty Name="Characteristic">
+        <ScalarProperty Name="Id" ColumnName="Characteristics_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MediaCharValue" TypeName="MyPhotosModel.MediaCharValue" StoreEntitySet="CharValues">
+      <EndProperty Name="Media">
+        <ScalarProperty Name="Id" ColumnName="Media_Id" />
+      </EndProperty>
+      <EndProperty Name="CharValue">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,10 @@
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\bin\Debug\netcoreapp3.1\ClassLibraryNetCore.deps.json
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\bin\Debug\netcoreapp3.1\ClassLibraryNetCore.dll
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\obj\Debug\netcoreapp3.1\ClassLibraryNetCore.csprojAssemblyReference.cache
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\obj\Debug\netcoreapp3.1\ClassLibraryNetCore.AssemblyInfoInputs.cache
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\obj\Debug\netcoreapp3.1\ClassLibraryNetCore.AssemblyInfo.cs
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\bin\Debug\netcoreapp3.1\ClassLibraryNetCore.runtimeconfig.json
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\bin\Debug\netcoreapp3.1\ClassLibraryNetCore.runtimeconfig.dev.json
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\bin\Debug\netcoreapp3.1\ClassLibraryNetCore.pdb
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\obj\Debug\netcoreapp3.1\ClassLibraryNetCore.dll
+D:\Faculty\TSP.NET\ClassLibraryNetCore\ClassLibraryNetCore\obj\Debug\netcoreapp3.1\ClassLibraryNetCore.pdb
