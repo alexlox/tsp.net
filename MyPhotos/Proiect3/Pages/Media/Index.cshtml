@@ -1,0 +1,48 @@
+﻿@page
+@model Proiect3.Pages.Media.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Media[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Media[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Media[0].AbsPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Media[0].Deleted)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Media)
+        {
+            <tr style="font-size:small">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AbsPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deleted)
+                </td>
+                <td>
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

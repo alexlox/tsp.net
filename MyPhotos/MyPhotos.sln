@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostWCF", "HostWCF\HostWCF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientMyPhotos", "ClientMyPhotos\ClientMyPhotos.csproj", "{CCBDE36E-A21C-4F39-95A7-391B56214603}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proiect3", "Proiect3\Proiect3.csproj", "{0E85D030-1399-467A-8851-6D13D1BBBB21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CCBDE36E-A21C-4F39-95A7-391B56214603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCBDE36E-A21C-4F39-95A7-391B56214603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCBDE36E-A21C-4F39-95A7-391B56214603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E85D030-1399-467A-8851-6D13D1BBBB21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E85D030-1399-467A-8851-6D13D1BBBB21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E85D030-1399-467A-8851-6D13D1BBBB21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E85D030-1399-467A-8851-6D13D1BBBB21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

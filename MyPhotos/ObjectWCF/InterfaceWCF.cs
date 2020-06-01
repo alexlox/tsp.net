@@ -13,6 +13,8 @@ namespace ObjectWCF
     interface IMedia
     {
         [OperationContract]
+        List<Media> GetMedia();
+        [OperationContract]
         List<int> GetPhotoVideoIds(List<Filter> filters = null);
         [OperationContract]
         Image GetPhotoVideoImage(int id);

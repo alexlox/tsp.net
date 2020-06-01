@@ -11,6 +11,11 @@ namespace ObjectWCF
     public class MyPhotos : IMyPhotos
     {
         private MyPhotosAPI myPhotosAPI = new MyPhotosAPI();
+
+        public List<Media> GetMedia()
+        {
+            return myPhotosAPI.GetMedia();
+        }
         public bool AddPhotoVideo(string path, string type)
         {
             return myPhotosAPI.AddPhotoVideo(path, type);

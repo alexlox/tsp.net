@@ -1,0 +1,36 @@
+﻿@page "{id:int?}"
+@model Proiect3.Pages.Media.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+    <div>
+        <img width="300px" src="/api/Images?path=@Model.Media.AbsPath" alt="Image not loaded." />
+
+        <h4>Characteristics</h4>
+        <hr />
+        @foreach (var item in Model.Media.Characteristics)
+        {
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(modelItem => item.Name)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </dd>
+                @if (item.CharValues.Count > 0)
+                {
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(modelItem => item.CharValues[0].Value)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(modelItem => item.CharValues[0].Value)
+                    </dd>
+                }
+            </dl>
+        }
+    </div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+

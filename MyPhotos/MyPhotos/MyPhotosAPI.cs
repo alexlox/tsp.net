@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Data.Entity;
 
 namespace MyPhotos
 {
@@ -27,11 +29,12 @@ namespace MyPhotos
          * <param name="filters">A list of filters for the selected media objects.</param>
          * <returns>A list of media model objects.</returns>
          */
-        protected List<Media> GetMedia(List<Filter> filters = null)
+        public List<Media> GetMedia(List<Filter> filters = null)
         {
-            List<Media> mediaList = new List<Media>();
-            
-            return mediaList;
+            using (MyPhotosModelContainer context = new MyPhotosModelContainer())
+            {
+                return context.Media.Include(m => m.Characteristics.Select(c => c.CharValues)).ToList();
+            }
         }
 
         /**

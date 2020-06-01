@@ -9,3 +9,4 @@ D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csproj.CoreCompileInputs
 D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\MyPhotos.dll.config
 D:\Faculty\TSP.NET\MyPhotos\MyPhotos\bin\Debug\MyPhotos.dll
 D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.dll
+D:\Faculty\TSP.NET\MyPhotos\MyPhotos\obj\Debug\MyPhotos.csprojAssemblyReference.cache

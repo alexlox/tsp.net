@@ -10,3 +10,8 @@ D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\obj\Debug\ObjectWCF.dll
 D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\obj\Debug\ObjectWCF.pdb
 D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\MyPhotos.dll
 D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\MyPhotos.dll.config
+D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\ObjectWCF.dll.config
+D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\EntityFramework.SqlServer.dll
+D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\System.Data.SqlClient.dll
+D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\EntityFramework.SqlServer.xml
+D:\Faculty\TSP.NET\MyPhotos\ObjectWCF\bin\Debug\System.Data.SqlClient.xml
